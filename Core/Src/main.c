@@ -21,7 +21,7 @@
 #include "main.h"
 #include "gpio.h"
 
-#define FLASH_SEC2_BASE_ADDRESS 0x08000000
+#define FLASH_SEC2_BASE_ADDRESS 0x08008000
 void SystemClock_Config(void);
 static void MX_NVIC_Init(void);
 void bootloader_jump_user_app(void);
@@ -75,13 +75,13 @@ int main(void)
 
  	__set_MSP(msp_value);
 
- 	uint32_t resethandler_address = *(volatile uint32_t *)FLASH_SEC2_BASE_ADDRESS + 4;
+ //	SCB->VTOR = FLASH_SEC2_BASE_ADDRESS;
+
+ 	uint32_t resethandler_address = *(volatile uint32_t *)(FLASH_SEC2_BASE_ADDRESS + 4);
 
  	app_reset_handler = (void*) resethandler_address;
 
  	app_reset_handler();
-
-
 
  }
 /**
