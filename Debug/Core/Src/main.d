@@ -26,7 +26,8 @@ Core/Src/main.o: ../Core/Src/main.c \
  D:/CUBEMX/STM32F0/ALL_Project_HSI/BootLoader_F0/Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr.h \
  D:/CUBEMX/STM32F0/ALL_Project_HSI/BootLoader_F0/Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr_ex.h \
  D:/CUBEMX/STM32F0/ALL_Project_HSI/BootLoader_F0/Core/Inc/gpio.h \
- D:/CUBEMX/STM32F0/ALL_Project_HSI/BootLoader_F0/Core/Inc/main.h
+ D:/CUBEMX/STM32F0/ALL_Project_HSI/BootLoader_F0/Core/Inc/main.h \
+ D:/CUBEMX/STM32F0/ALL_Project_HSI/BootLoader_F0/Core/Inc/Internal_flash.h
 
 D:/CUBEMX/STM32F0/ALL_Project_HSI/BootLoader_F0/Core/Inc/main.h:
 
@@ -83,3 +84,5 @@ D:/CUBEMX/STM32F0/ALL_Project_HSI/BootLoader_F0/Drivers/STM32F0xx_HAL_Driver/Inc
 D:/CUBEMX/STM32F0/ALL_Project_HSI/BootLoader_F0/Core/Inc/gpio.h:
 
 D:/CUBEMX/STM32F0/ALL_Project_HSI/BootLoader_F0/Core/Inc/main.h:
+
+D:/CUBEMX/STM32F0/ALL_Project_HSI/BootLoader_F0/Core/Inc/Internal_flash.h:

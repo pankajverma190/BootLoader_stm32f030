@@ -286,7 +286,8 @@ typedef struct
 /* IO operation functions *****************************************************/
 HAL_StatusTypeDef HAL_FLASH_Program(uint32_t TypeProgram, uint32_t Address, uint64_t Data);
 HAL_StatusTypeDef HAL_FLASH_Program_IT(uint32_t TypeProgram, uint32_t Address, uint64_t Data);
-
+//pankaj
+HAL_StatusTypeDef HAL_FLASH_Program_8bit(uint32_t TypeProgram, uint32_t Address, uint8_t Data);
 /* FLASH IRQ handler function */
 void       HAL_FLASH_IRQHandler(void);
 /* Callbacks in non blocking modes */ 

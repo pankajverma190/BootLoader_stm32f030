@@ -201,7 +201,7 @@ HAL_StatusTypeDef HAL_FLASH_Program(uint32_t TypeProgram, uint32_t Address, uint
     for (index = 0U; index < nbiterations; index++)
     {
       FLASH_Program_HalfWord((Address + (2U*index)), (uint16_t)(Data >> (16U*index)));
-
+    //  FLASH_Program_HalfWord((Address ), (uint16_t)(Data));
         /* Wait for last operation to be completed */
         status = FLASH_WaitForLastOperation(FLASH_TIMEOUT_VALUE);
     
@@ -220,7 +220,72 @@ HAL_StatusTypeDef HAL_FLASH_Program(uint32_t TypeProgram, uint32_t Address, uint
 
   return status;
 }
-
+//pankaj
+//HAL_StatusTypeDef HAL_FLASH_Program_8bit(uint32_t TypeProgram, uint32_t Address, uint8_t Data)
+//{
+//  HAL_StatusTypeDef status = HAL_ERROR;
+//  uint8_t index = 0U;
+//  uint8_t nbiterations = 0U;
+//
+//  /* Process Locked */
+//  __HAL_LOCK(&pFlash);
+//
+//  /* Check the parameters */
+//  assert_param(IS_FLASH_TYPEPROGRAM(TypeProgram));
+//  assert_param(IS_FLASH_PROGRAM_ADDRESS(Address));
+//
+//    /* Wait for last operation to be completed */
+//    status = FLASH_WaitForLastOperation(FLASH_TIMEOUT_VALUE);
+//
+//  if(status == HAL_OK)
+//  {
+////    if(TypeProgram == FLASH_TYPEPROGRAM_HALFWORD)
+////    {
+////      /* Program halfword (16-bit) at a specified address. */
+////      nbiterations = 1U;
+////    }
+////    else if(TypeProgram == FLASH_TYPEPROGRAM_WORD)
+////    {
+////      /* Program word (32-bit = 2*16-bit) at a specified address. */
+////      nbiterations = 2U;
+////    }
+////    else
+////    {
+////      /* Program double word (64-bit = 4*16-bit) at a specified address. */
+////      nbiterations = 4U;
+////    }
+//
+////    for (index = 0U; index < nbiterations; index++)
+////    {
+// //     FLASH_Program_HalfWord((Address + (2U*index)), (uint16_t)(Data >> (16U*index)));
+// //     FLASH_Program_HalfWord((Address ), (uint8_t)(Data));
+//
+//    	  /* Clean the error context */
+//    	  pFlash.ErrorCode = HAL_FLASH_ERROR_NONE;
+//
+//    	    /* Proceed to program the new data */
+//    	    SET_BIT(FLASH->CR, FLASH_CR_PG);
+//
+//    	  /* Write data in the address */
+//    	  *(__IO uint16_t*)Address = (uint8_t)(Data);
+//        /* Wait for last operation to be completed */
+//        status = FLASH_WaitForLastOperation(FLASH_TIMEOUT_VALUE);
+//
+//        /* If the program operation is completed, disable the PG Bit */
+//        CLEAR_BIT(FLASH->CR, FLASH_CR_PG);
+//      /* In case of error, stop programming procedure */
+////      if (status != HAL_OK)
+////      {
+////        break;
+////      }
+////    }
+//  }
+//
+//  /* Process Unlocked */
+//  __HAL_UNLOCK(&pFlash);
+//
+//  return status;
+//}
 /**
   * @brief  Program halfword, word or double word at a specified address  with interrupt enabled.
   * @note   The function HAL_FLASH_Unlock() should be called before to unlock the FLASH interface
